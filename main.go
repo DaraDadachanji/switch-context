@@ -27,7 +27,7 @@ func main() {
 	} else {
 		fmt.Println("Profile not found")
 		fmt.Println("Available profiles are:")
-		for key, _ := range profiles {
+		for key := range profiles {
 			fmt.Println(key)
 		}
 	}
