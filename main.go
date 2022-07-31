@@ -35,7 +35,7 @@ func main() {
 }
 
 type Profile map[string]string
-type Profiles map[string]map[string]string
+type Profiles map[string]Profile
 
 func ReadConfigFile() (Profiles, error) {
 	configFile := filepath.Join(HomeDirectory(), ".scontext/profiles.yaml")
