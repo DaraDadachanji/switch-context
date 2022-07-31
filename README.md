@@ -1,5 +1,10 @@
 # Scontext
 
+Scontext is a simple CLI tool to switch various environments quickly
+I made it for myself and plan to add to it as I need to.
+
+I could have probably done this in bash but I didn't feel like it.
+
 ## Installation
 
 Install Go from the [official website](https://go.dev/)
