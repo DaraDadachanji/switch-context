@@ -56,7 +56,7 @@ func ReadConfigFile() (Profiles, error) {
 		return config.Profiles, nil
 	}
 	log.Println("file not found:", configFile)
-	return nil, fmt.Errorf("file not found:", configFile)
+	return nil, fmt.Errorf("file not found: %s", configFile)
 }
 
 func fileExists(filename string) bool {
