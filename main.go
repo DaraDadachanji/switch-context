@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"os/user"
 	"path/filepath"
 
@@ -15,17 +16,33 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	if len(os.Args) != 1 {
-		log.Fatal("expected 1 argument")
+	if len(os.Args) != 2 {
+		log.Fatal("expected 1 argument. Recieved", len(os.Args)-1)
 	}
-	name := os.Args[0]
+	name := os.Args[1]
 
 	if profile, ok := profiles[name]; ok {
-		for key, value := range profile {
+		for key, value := range profile.Environment {
 			os.Setenv(key, value)
+			fmt.Printf("set %s = %s\n", key, value)
 		}
+		if profile.KubeContext != nil {
+			command := exec.Command(
+				"kubectl",
+				"config",
+				"use-context",
+				*profile.KubeContext,
+			)
+			err := command.Run()
+			if err != nil {
+				log.Println(err)
+			} else {
+				fmt.Println("set kube context:", *profile.KubeContext)
+			}
+		}
+
 	} else {
-		fmt.Println("Profile not found")
+		fmt.Println("Profile not found:", name)
 		fmt.Println("Available profiles are:")
 		for key := range profiles {
 			fmt.Println(key)
@@ -34,8 +51,11 @@ func main() {
 
 }
 
-type Profile map[string]string
 type Profiles map[string]Profile
+type Profile struct {
+	Environment map[string]string `yaml:"env"`
+	KubeContext *string           `yaml:"kube"`
+}
 
 func ReadConfigFile() (Profiles, error) {
 	configFile := filepath.Join(HomeDirectory(), ".scontext/profiles.yaml")
