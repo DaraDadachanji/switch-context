@@ -23,7 +23,7 @@ func main() {
 
 	if profile, ok := profiles[name]; ok {
 		for key, value := range profile.Environment {
-			fmt.Printf(`EXPORT %s="%s"\n`, key, value)
+			fmt.Printf(" export %s=\"%s\"\n", key, value)
 		}
 		if profile.KubeContext != nil {
 			command := exec.Command(

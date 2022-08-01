@@ -1,4 +1,4 @@
-module github.com/DaraDadachanji/scontext
+module github.com/DaraDadachanji/switch-context
 
 go 1.17
 
