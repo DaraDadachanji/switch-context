@@ -36,7 +36,7 @@ func main() {
 			if err != nil {
 				log.Println(err)
 			} else {
-				fmt.Println("set kube context:", *profile.KubeContext)
+				log.Println("set kube context:", *profile.KubeContext)
 			}
 		}
 
