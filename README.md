@@ -15,7 +15,16 @@ clone this repository and build the executable. Then move it to your bin folder
 git clone https://github.com/DaraDadachanji/scontext.git
 cd scontext
 go build
-mv ./scontext /usr/local/bin/scontext
+mv ./switch-context /usr/local/bin/switch-context
+```
+
+add the following snippet to your bash profile
+
+```bash
+function scontext() {
+    switch-context $1 > /tmp/switchcontext
+    source /tmp/switchcontext
+}
 ```
 
 ## Configuration
@@ -46,10 +55,3 @@ Call `scontext` and then the name of your profile
 
 `scontext usprod`
 
-output
-
-```text
-set AWS_PROFILE = default
-set AWS_REGION = us-east-1
-set kube context: k8s-prod
-```
