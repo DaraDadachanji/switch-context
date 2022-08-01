@@ -27,6 +27,8 @@ function scontext() {
 }
 ```
 
+This allows the environment variable changes to persist in the shell session.
+
 ## Configuration
 
 create a file in your home directory named `.scontext`
