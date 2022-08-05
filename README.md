@@ -31,7 +31,7 @@ This allows the environment variable changes to persist in the shell session.
 
 ## Configuration
 
-create a file in your home directory named `.switchcontext`
+create a folder in your home directory named `.switchcontext`
 and a file inside named `profiles.yaml`
 
 for example:
