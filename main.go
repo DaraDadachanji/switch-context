@@ -58,7 +58,7 @@ type Profile struct {
 }
 
 func ReadConfigFile() (Profiles, error) {
-	configFile := filepath.Join(HomeDirectory(), ".scontext/profiles.yaml")
+	configFile := filepath.Join(HomeDirectory(), ".switchcontext/profiles.yaml")
 
 	if fileExists(configFile) {
 		data, err := os.ReadFile(configFile)

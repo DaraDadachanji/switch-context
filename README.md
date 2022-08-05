@@ -1,6 +1,6 @@
-# Scontext
+# Switch-context
 
-Scontext is a simple CLI tool to switch various environments quickly
+Switch-context is a simple CLI tool to switch various environments quickly
 I made it for myself and plan to add to it as I need to.
 
 I could have probably done this in bash but I didn't feel like it.
@@ -21,7 +21,7 @@ mv ./switch-context /usr/local/bin/switch-context
 add the following snippet to your bash profile
 
 ```bash
-function scontext() {
+function sc() {
     switch-context $1 > /tmp/switchcontext
     source /tmp/switchcontext
 }
@@ -31,7 +31,7 @@ This allows the environment variable changes to persist in the shell session.
 
 ## Configuration
 
-create a file in your home directory named `.scontext`
+create a file in your home directory named `.switchcontext`
 and a file inside named `profiles.yaml`
 
 for example:
