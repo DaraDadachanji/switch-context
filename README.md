@@ -52,8 +52,8 @@ profiles:
 
 ## Usage
 
-Call `scontext` and then the name of your profile
+Call `sc` and then the name of your profile
 
 
-`scontext usprod`
+`sc usprod`
 
