@@ -54,6 +54,4 @@ profiles:
 
 Call `sc` and then the name of your profile
 
-
 `sc usprod`
-
