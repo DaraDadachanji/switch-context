@@ -3,3 +3,7 @@
 
 #Artifacts
 scontext
+
+#Editor Files
+.idea
+.vscode

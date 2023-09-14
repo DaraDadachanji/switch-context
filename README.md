@@ -13,7 +13,7 @@ clone this repository and build the executable. Then move it to your bin folder
 
 ```bash
 git clone https://github.com/DaraDadachanji/scontext.git
-cd scontext
+cd switch-context
 go mod tidy
 go build
 mv ./switch-context /usr/local/bin/switch-context
