@@ -12,7 +12,7 @@ Install Go from the [official website](https://go.dev/)
 clone this repository and build the executable. Then move it to your bin folder
 
 ```bash
-git clone https://github.com/DaraDadachanji/scontext.git
+git clone https://github.com/DaraDadachanji/switch-context.git
 cd switch-context
 go mod tidy
 go build
